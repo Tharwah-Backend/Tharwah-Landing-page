@@ -3,279 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ثروة — ابنِ عادات مالية، لا مجرد معرفة</title>
+<title>.ثروة — ابنِ عادات مالية، لا مجرد معرفة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #FDFBF4;
-    --tint: #F4EEDC;
-    --surface: #FFFFFF;
-    --ink: #1C2B1E;
-    --muted: #5F6C58;
-    --hairline: rgba(30,45,30,.14);
-    --brand:      #1E7A3C;
-    --brand-ink:  #14532A;
-    --brand-soft: #E4F1E2;
-    --coral:      #C64B33;
-    --coral-soft: #F8E7E0;
-    --gold:       #E0A82E;
-    --gold-ink:   #8A6410;
-    --gold-soft:  #F9EFD4;
-    --purple:     #7A5AA0;
-    --purple-soft:#EFE8F6;
-    --sky:        #4A7FA5;
-    --sky-soft:   #E4EFF6;
-    --font-display: 'Baloo Bhaijaan 2', 'Baloo 2', system-ui, sans-serif;
-    --font-body: 'Tajawal', system-ui, sans-serif;
-    --radius: 22px;
-  }
-  :root[data-theme="dark"]{
-    --bg: #0F1A14; --tint: #18261F; --surface: #1D2C24; --ink: #F2F8F3; --muted: #A9BFB2;
-    --hairline: rgba(255,255,255,.10);
-    --brand: #3DAA62; --brand-ink: #7DDBA0; --brand-soft: #1a3525;
-    --coral: #E07060; --coral-soft: #3a1a14;
-    --gold: #E0B84E; --gold-ink: #D4A030; --gold-soft: #3a2c10;
-    --purple: #9A7AC0; --purple-soft: #2a1a40;
-    --sky: #6A9FC5; --sky-soft: #1a2c3a;
-  }
-  *{ box-sizing: border-box; margin: 0; padding: 0; }
-  html{ scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } *, *::before, *::after{ animation: none !important; transition: none !important; } }
-  body{ font-family: var(--font-body); background: var(--bg); color: var(--ink); line-height: 1.75; -webkit-font-smoothing: antialiased; }
-  img, svg{ max-width: 100%; }
-  a{ color: inherit; }
-  :focus-visible{ outline: 3px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
-  .wrap{ max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  h1,h2,h3{ font-family: var(--font-display); line-height: 1.25; text-wrap: balance; }
-  h1{ font-size: clamp(2.2rem, 5.2vw, 3.7rem); font-weight: 800; }
-  h2{ font-size: clamp(1.6rem, 3.2vw, 2.4rem); font-weight: 700; }
-  h3{ font-size: 1.2rem; font-weight: 700; }
-  .eyebrow{ font-family: var(--font-body); font-weight: 800; font-size: .82rem; color: var(--brand); display: inline-block; margin-bottom: 12px; }
-  .lede{ font-size: 1.15rem; color: var(--muted); max-width: 58ch; }
-
-  /* ── NAV ── */
-  .nav{ position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--hairline); }
-  .nav-inner{ display: flex; align-items: center; gap: 28px; padding: 14px 24px; max-width: 1120px; margin: 0 auto; flex-direction: row-reverse; }
-  .logo{ font-family: var(--font-display); font-weight: 800; font-size: 1.55rem; color: var(--brand-ink); text-decoration: none; line-height: 1; display: flex; align-items: baseline; gap: 8px; }
-  .logo .en{ font-size: .95rem; color: var(--muted); font-weight: 600; font-family: sans-serif; }
-  .nav-links{ display: flex; gap: 22px; margin-inline-end: auto; align-items: center; flex-direction: row-reverse; }
-  .nav-links a{ text-decoration: none; font-weight: 700; font-size: .95rem; color: var(--muted); }
-  .nav-links a:hover{ color: var(--ink); }
-  .btn{ display: inline-block; text-decoration: none; font-weight: 800; font-family: var(--font-body); border-radius: 999px; padding: 12px 26px; font-size: 1rem; background: var(--brand); color: #fff; border: none; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
-  .btn:hover{ transform: translateY(-2px); box-shadow: 0 8px 20px color-mix(in srgb, var(--brand) 35%, transparent); }
-  .btn.ghost{ background: transparent; color: var(--brand-ink); box-shadow: inset 0 0 0 2px var(--brand); }
-  .btn.ghost:hover{ box-shadow: inset 0 0 0 2px var(--brand), 0 8px 20px color-mix(in srgb, var(--brand) 20%, transparent); }
-  .btn.sun{ background: var(--gold); color: #3d3212; }
-  .btn.sun:hover{ box-shadow: 0 8px 20px color-mix(in srgb, var(--gold) 45%, transparent); }
-  .nav .btn{ padding: 9px 20px; font-size: .92rem; }
-  .theme-toggle{ width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--hairline); background: var(--surface); font-size: 1.05rem; cursor: pointer; display: grid; place-items: center; transition: transform .15s ease; }
-  .theme-toggle:hover{ transform: translateY(-2px); border-color: var(--brand); }
-  @media (max-width: 720px){ .nav-links a:not(.btn){ display: none; } }
-
-  /* ── HERO ── */
-  .hero{ padding: clamp(56px, 9vw, 100px) 0 clamp(40px, 6vw, 70px); overflow: hidden; }
-  .hero-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 64px); align-items: center; }
-  @media (max-width: 860px){ .hero-grid{ grid-template-columns: 1fr; } }
-  .hero .lede{ margin: 20px 0 30px; }
-  .hero-ctas{ display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
-  .hero-note{ margin-top: 18px; font-size: .88rem; color: var(--muted); text-align: right; }
-  .hero-copy{ text-align: right; }
-
-  /* scribble underline */
-  .grow{ position: relative; display: inline-block; color: var(--brand); }
-  .grow .scribble{ position: absolute; right: 0; bottom: -.22em; width: 100%; height: .32em; color: var(--gold); overflow: visible; }
-
-  /* Hero left (RTL: visually right): mascot + phone composition */
-  .hero-art{
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 0;
-    min-height: 520px;
-  }
-  .tile{ position: absolute; background: #24603A; border-radius: 40px; overflow: hidden; }
-  .tile .doodle{ position: absolute; stroke: rgba(255,255,255,.6); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-  .tile.t1{ width: 78%; height: 88%; top: 0; left: 0; border-bottom-right-radius: 120px; }
-  [data-theme="dark"] .tile{ background: #1a4028; }
-
-  /* mascot — large, welcoming, mirrored for RTL */
-  .mascot-hero{
-    position: relative; z-index: 4;
-    width: clamp(200px, 28vw, 310px);
-    flex-shrink: 0;
-    filter: drop-shadow(0 16px 28px rgba(20,40,30,.3));
-    margin-left: -24px;
-    align-self: flex-end;
-    transform: scaleX(-1); /* face toward text (right side in RTL) */
-  }
-
-  /* phone */
-  .phone{
-    position: relative; z-index: 3;
-    width: min(260px, 72vw);
-    background: var(--surface);
-    border-radius: 36px;
-    border: 1px solid var(--hairline);
-    box-shadow: 0 28px 56px -16px rgba(20,40,30,.28);
-    padding: 18px 15px 22px;
-    margin-bottom: 24px;
-    text-align: right;
-  }
-  .phone-top{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-direction: row-reverse; }
-  .phone-hello{ font-weight: 800; font-size: .9rem; }
-  .phone-hello small{ display: block; font-weight: 600; color: var(--muted); font-size: .68rem; }
-  .coin-badge{ width: 32px; height: 32px; border-radius: 50%; background: var(--gold); color: #3d3212; display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-size: .76rem; }
-  .balance-card{ background: var(--brand); color: #fff; border-radius: 16px; padding: 14px 16px; margin-bottom: 12px; }
-  .balance-card small{ opacity: .85; font-weight: 700; font-size: .68rem; }
-  .balance-card .amt{ font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; direction: ltr; text-align: left; }
-  .jars{ display: grid; gap: 8px; }
-  .jar{ display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; background: var(--tint); border: 1px solid var(--hairline); border-radius: 14px; padding: 8px 12px; direction: rtl; }
-  .jar-ico{ width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; font-size: 1.05rem; }
-  .jar b{ font-size: .84rem; display: block; }
-  .jar small{ color: var(--muted); font-size: .68rem; font-weight: 700; }
-  .jar .amt{ font-family: var(--font-display); font-weight: 800; font-size: .92rem; direction: ltr; }
-  .jar.spend .jar-ico{ background: var(--coral-soft); }
-  .jar.save  .jar-ico{ background: var(--gold-soft); }
-  .jar.give  .jar-ico{ background: var(--purple-soft); }
-  .phone-task{ margin-top: 10px; background: var(--sky-soft); border-radius: 13px; padding: 10px 12px; font-size: .78rem; font-weight: 700; display: flex; gap: 8px; align-items: center; flex-direction: row-reverse; }
-  .phone-task span{ font-size: 1rem; }
-
-  /* float cards */
-  .float-card{ position: absolute; z-index: 5; background: var(--surface); border: 1px solid var(--hairline); border-radius: 14px; padding: 10px 14px; box-shadow: 0 12px 28px -10px rgba(20,40,30,.28); font-size: .82rem; line-height: 1.45; text-align: right; }
-  .float-card b{ font-size: .9rem; }
-  .float-card small{ color: var(--muted); font-weight: 700; display: block; }
-  .fc-goal{ top: 8%; right: -8px; width: 175px; }
-  .fc-task{ bottom: 28%; left: -8px; width: 188px; text-align: right; }
-  .bar{ height: 7px; border-radius: 99px; background: var(--gold-soft); margin: 6px 0 5px; overflow: hidden; }
-  .bar span{ display: block; height: 100%; border-radius: 99px; background: var(--gold); float: right; }
-
-  @media (max-width: 860px){
-    .hero-art{ min-height: 0; flex-direction: column; align-items: center; padding: 24px 0; gap: 16px; }
-    .tile{ display: none; }
-    .mascot-hero{ width: 180px; margin-left: 0; }
-    .phone{ margin-bottom: 0; }
-    .float-card{ display: none; }
-  }
-
-  /* ── SECTIONS ── */
-  section{ padding: clamp(48px, 8vw, 96px) 0; }
-  section.alt{ background: var(--tint); border-block: 1px solid var(--hairline); }
-  .sec-head{ max-width: 640px; margin-bottom: clamp(28px, 5vw, 52px); }
-
-  /* ── THREE JARS ── */
-  .buckets{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  @media (max-width: 860px){ .buckets{ grid-template-columns: 1fr; } }
-  .bucket{ border-radius: var(--radius); padding: 28px 26px; border: 1px solid var(--hairline); }
-  .bucket.spend{ background: var(--coral-soft); }
-  .bucket.save{ background: var(--gold-soft); }
-  .bucket.give{ background: var(--purple-soft); }
-  .bucket .pct{ font-family: var(--font-display); font-weight: 800; font-size: 2.4rem; line-height: 1; }
-  .bucket.spend .pct{ color: var(--coral); }
-  .bucket.save .pct{ color: var(--gold-ink); }
-  .bucket.give .pct{ color: var(--purple); }
-  .bucket h3{ margin: 10px 0 8px; }
-  .bucket p{ color: var(--muted); font-size: .97rem; }
-  .bucket-note{ margin-top: 22px; color: var(--muted); font-size: .92rem; }
-
-  /* ── HOW IT WORKS ── */
-  .steps{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: step; }
-  @media (max-width: 860px){ .steps{ grid-template-columns: 1fr; } }
-  .step{ background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--radius); padding: 28px 26px; }
-  .step::before{ counter-increment: step; content: counter(step); display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--brand); color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; margin-bottom: 16px; }
-  .step h3{ margin-bottom: 8px; }
-  .step p{ color: var(--muted); font-size: .96rem; }
-
-  /* ── FEATURES — editorial, no card boxes ── */
-  .features-clean{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px solid var(--hairline);
-    border-right: 1px solid var(--hairline);
-  }
-  @media (max-width: 680px){ .features-clean{ grid-template-columns: 1fr; } }
-  .feat-row{
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 32px 28px;
-    border-left: 1px solid var(--hairline);
-    border-bottom: 1px solid var(--hairline);
-    flex-direction: row-reverse;
-    text-align: right;
-    transition: background .18s ease;
-  }
-  .feat-row:hover{ background: var(--tint); }
-  [data-theme="dark"] .feat-row:hover{ background: color-mix(in srgb, var(--brand-soft) 30%, transparent); }
-  .feat-ico{ font-size: 2.2rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
-  .feat-row h3{ font-size: 1.05rem; margin-bottom: 6px; font-family: var(--font-display); }
-  .feat-row p{ color: var(--muted); font-size: .93rem; line-height: 1.7; }
-
-  /* ── FOR FAMILIES ── */
-  .duo{ display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  @media (max-width: 860px){ .duo{ grid-template-columns: 1fr; } }
-  .persona{ border-radius: var(--radius); padding: 36px 32px; border: 1px solid var(--hairline); text-align: right; }
-  .persona.parents{ background: var(--brand-soft); }
-  .persona.kids{ background: var(--gold-soft); }
-  .persona h3{ font-size: 1.45rem; margin-bottom: 6px; font-family: var(--font-display); }
-  .persona .sub{ color: var(--muted); font-weight: 700; font-size: .9rem; margin-bottom: 22px; }
-  .persona-items{ display: flex; flex-direction: column; gap: 14px; }
-  .persona-item{ display: flex; gap: 14px; align-items: flex-start; font-size: .97rem; flex-direction: row-reverse; }
-  .persona-item .pi-dot{ flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; margin-top: .56em; }
-  .persona.parents .pi-dot{ background: var(--brand); }
-  .persona.kids .pi-dot{ background: var(--gold-ink); }
-
-  /* ── ABOUT ── */
-  .about-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 72px); align-items: center; }
-  @media (max-width: 860px){ .about-grid{ grid-template-columns: 1fr; } }
-  .about{ text-align: right; }
-  .about p+p{ margin-top: 14px; }
-  .about p{ color: var(--muted); }
-  .about p strong{ color: var(--ink); }
-  .wordmark-card{ background: var(--brand); border-radius: var(--radius); padding: clamp(40px, 6vw, 72px) 24px; text-align: center; color: #fff; }
-  .wordmark-card .ar-mark{ font-family: var(--font-display); font-weight: 800; font-size: clamp(3rem, 7vw, 4.5rem); line-height: 1.2; }
-  .wordmark-card .en-mark{ font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-top: 10px; opacity: .9; font-family: sans-serif; }
-  .wordmark-card .tag{ margin-top: 16px; font-size: .95rem; font-weight: 700; opacity: .8; }
-
-  /* ── CTA BAND ── */
-  .cta-band{ position: relative; background: var(--brand); border-radius: var(--radius); padding: clamp(40px, 6vw, 64px); color: #fff; text-align: right; }
-  .cta-band h2{ color: #fff; margin-bottom: 12px; }
-  .cta-band p{ color: rgba(255,255,255,.85); max-width: 52ch; margin: 0 0 28px; }
-  .cta-band .btn-white{ background: #fff; color: var(--brand-ink); border-radius: 999px; padding: 12px 28px; font-weight: 800; font-size: 1rem; text-decoration: none; display: inline-block; transition: transform .15s, box-shadow .15s; font-family: var(--font-body); }
-  .cta-band .btn-white:hover{ transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
-  .mascot-cta{ position: absolute; bottom: 0; left: 3%; width: clamp(140px, 18vw, 220px); filter: drop-shadow(0 12px 20px rgba(0,0,0,.25)); transform: scaleX(-1); }
-  @media (max-width: 860px){ .mascot-cta{ position: static; display: block; margin: 24px auto -8px; width: 150px; transform: none; } .cta-band{ text-align: center; } .cta-band p{ margin: 0 auto 28px; } }
-  @media (min-width: 861px){ .cta-band{ padding-left: clamp(180px, 24%, 280px); } }
-
-  /* ── FOOTER ── */
-  footer{ border-top: 1px solid var(--hairline); padding: 40px 0 48px; }
-  .foot{ display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; flex-direction: row-reverse; }
-  .foot .logo{ font-size: 1.3rem; }
-  .foot-links{ display: flex; gap: 20px; flex-wrap: wrap; flex-direction: row-reverse; }
-  .foot-links a{ text-decoration: none; color: var(--muted); font-weight: 700; font-size: .92rem; }
-  .foot-links a:hover{ color: var(--ink); }
-  .foot-small{ width: 100%; color: var(--muted); font-size: .84rem; margin-top: 8px; text-align: right; }
-
-  /* ── REVEAL ── */
-  .reveal{ opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.in{ opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce){ .reveal{ opacity: 1; transform: none; } }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav class="nav" aria-label="الرئيسية">
   <div class="nav-inner">
-    <a class="logo" href="#top">ثروة <span class="en">tharwah</span></a>
+    <a class="logo" href="#top"><span data-lang="ar">ثروة</span><span data-lang="en">Tharwah</span><span class="en" data-lang="ar">tharwah</span></a>
     <div class="nav-links">
-      <a href="#how">كيف يعمل</a>
-      <a href="#features">المميزات</a>
-      <a href="#families">للعائلات</a>
-      <a href="#about">من نحن</a>
+      <a href="#how"><span data-lang="ar"> ابدأ رحلتك معنا</span><span data-lang="en">Start your journey</span></a>
+      <a href="#features"><span data-lang="ar">مميزاتنا</span><span data-lang="en">Features</span></a>
+      <a href="#families"><span data-lang="ar">أسلوبنا</span><span data-lang="en">Our approach</span></a>
+      <a href="#about"><span data-lang="ar">من نحن</span><span data-lang="en">About us</span></a>
       <button class="theme-toggle" id="themeToggle" aria-label="تبديل المظهر">🌙</button>
-      <a class="btn ghost" href="#early-access">انضم مبكرًا</a>
+      <button class="lang-toggle" id="langToggle" aria-label="Change language">EN</button>
+      <a class="btn ghost" href="#early-access"><span data-lang="ar">انضم إلينا</span><span data-lang="en">Join us</span></a>
     </div>
   </div>
 </nav>
@@ -292,19 +38,19 @@
       </div>
 
       <div class="float-card fc-goal" aria-hidden="true">
-        <b>🎯 دراجة جديدة</b>
+        <b data-lang="ar">🎯 دراجتي الجديدة</b><b data-lang="en">🎯 My new bike</b>
         <div class="bar"><span style="width:75%"></span></div>
-        <small>ادُّخر ٧٥٪ · ٤٥ من ٦٠ ريالاً</small>
+        <small data-lang="ar">ادُّخر ٧٥٪ · ٤٥ من ٦٠ ريالاً</small><small data-lang="en">75% saved · 45 of 60 SAR</small>
       </div>
       <div class="float-card fc-task" aria-hidden="true">
-        <b>🧹 رُتّبت الغرفة +٣ ريال</b>
-        <small>وافقت ماما · الآن</small>
+        <b data-lang="ar">🧹 ترتيب الغرفة  </b><b data-lang="en">🧹 Tidy the room</b>
+        <small data-lang="ar">وافقت ماما · الآن</small><small data-lang="en">Mom approved · just now</small>
       </div>
 
       <!-- mascot — large, waving, facing text -->
       <img
         class="mascot-hero"
-        src="attached_assets/Untitled_-_21_يونيو_2026_في_22.33.16_(1)_1784218591128.png"
+        src="images/waiving mascot.png"
         alt="تميمة ثروة تلوّح مرحبةً — شخصية خضراء بالزي السعودي"
         width="330" height="380"
       >
@@ -313,43 +59,61 @@
       <div class="phone" role="img" aria-label="معاينة تطبيق ثروة">
         <div class="phone-top">
           <div class="coin-badge">⭐</div>
-          <div class="phone-hello"><small>صباح الخير</small> سارة 👋</div>
+          <div class="phone-hello">
+            <small data-lang="ar">صباح الخير</small><small data-lang="en">Good morning</small>
+            <span data-lang="ar">سارة 👋</span><span data-lang="en">Sara 👋</span>
+          </div>
         </div>
         <div class="balance-card">
-          <small>المصروف الشهري</small>
-          <div class="amt">٥٠٠ ريال</div>
+          <small data-lang="ar">المصروف الشهري</small><small data-lang="en">Monthly allowance</small>
+          <div class="amt"><span data-lang="ar">٥٠٠ ريال</span><span data-lang="en">500 SAR</span></div>
         </div>
         <div class="jars">
           <div class="jar spend">
             <div class="jar-ico">🛍️</div>
-            <div><b>أنفق</b><small>٥٠٪ من المصروف</small></div>
-            <div class="amt">٢٥٠</div>
+            <div>
+              <b data-lang="ar">أنفق</b><b data-lang="en">Spend</b>
+              <small data-lang="ar">٥٠٪ من المصروف</small><small data-lang="en">50% of allowance</small>
+            </div>
+            <div class="amt"><span data-lang="ar">٢٥٠</span><span data-lang="en">250</span></div>
           </div>
           <div class="jar save">
             <div class="jar-ico">🏦</div>
-            <div><b>ادّخر</b><small>٣٠٪ · هدف الدراجة</small></div>
-            <div class="amt">١٥٠</div>
+            <div>
+              <b data-lang="ar">ادّخر</b><b data-lang="en">Save</b>
+              <small data-lang="ar">٣٠٪ · هدف الدراجة</small><small data-lang="en">30% · bike goal</small>
+            </div>
+            <div class="amt"><span data-lang="ar">١٥٠</span><span data-lang="en">150</span></div>
           </div>
           <div class="jar give">
             <div class="jar-ico">💝</div>
-            <div><b>تبرّع</b><small>٢٠٪ · محفظة العطاء</small></div>
-            <div class="amt">١٠٠</div>
+            <div>
+              <b data-lang="ar">تبرّع</b><b data-lang="en">Give</b>
+              <small data-lang="ar">٢٠٪ · محفظة العطاء</small><small data-lang="en">20% · giving wallet</small>
+            </div>
+            <div class="amt"><span data-lang="ar">١٠٠</span><span data-lang="en">100</span></div>
           </div>
         </div>
-        <div class="phone-task"><span>🧹</span>رتّب غرفتك — اربح ٣٠ ريالاً بموافقة ماما!</div>
+        <div class="phone-task"><span>🧹</span><span data-lang="ar">رتّب غرفتك — اربح ٣٠ ريالاً بموافقة ماما!</span><span data-lang="en">Tidy your room — earn 30 SAR with Mom's approval!</span></div>
       </div>
     </div>
 
     <!-- copy -->
     <div class="hero-copy">
-      <span class="eyebrow">التربية المالية السلوكية للعائلات</span>
-      <h1>ربّوا طفلاً لا يعرف المال فحسب — بل <span class="grow">يعيشه<svg class="scribble" viewBox="0 0 200 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 Q 55 5 110 11 T 196 9" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M22 20 Q 85 12 165 16" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
-      <p class="lede">ثروة ليس اختباراً. إنه حلقة عادات يومية — المهام تُدر مالاً، الادخار يبني ثباتاً، والعطاء يبني شخصية. كل قرار يتخذه طفلك يُشكّل علاقته بالمال للأبد.</p>
+      <span class="eyebrow" data-lang="ar">التربية المالية السلوكية للأبناء</span>
+      <span class="eyebrow" data-lang="en">Behavioral financial education for kids</span>
+      <h1>
+        <span data-lang="ar">أبناؤنا هم <span class="grow">الثروة<svg class="scribble" viewBox="0 0 200 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 Q 55 5 110 11 T 196 9" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M22 20 Q 85 12 165 16" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span></span>
+        <span data-lang="en">Our children are the <span class="grow">wealth<svg class="scribble" viewBox="0 0 200 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 Q 55 5 110 11 T 196 9" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M22 20 Q 85 12 165 16" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span></span>
+      </h1>
+      <p class="lede" data-lang="ar">ثروة مو تطبيق متابعة مصاريف فقط. ثروة يرافق ابنك في رحلة تعلم عملية يتحمل فيها مسؤولية قراره ويبني فيها عقلية العطاء والادخار.</p>
+      <p class="lede" data-lang="en">Tharwah isn't just an expense tracker. Tharwah walks with your child through a hands-on learning journey where they own their decisions and build a mindset of saving and giving.</p>
       <div class="hero-ctas">
-        <a class="btn sun" href="#early-access">انضم مبكرًا</a>
-        <a class="btn ghost" href="#how">شاهد كيف يعمل</a>
+        <a class="btn sun" href="#early-access"><span data-lang="ar">انضم إلينا</span><span data-lang="en">Join us</span></a>
+        <a class="btn ghost" href="#how"><span data-lang="ar">أسلوبنا</span><span data-lang="en">Our approach</span></a>
       </div>
-      <p class="hero-note">🔒 الأهل يوافقون على كل شيء. لا تحويلات حقيقية.</p>
+      <p class="hero-note" data-lang="ar">🔒 رقابة وموافقة من الأهل ما تعارض الحرية المالية.</p>
+      <p class="hero-note" data-lang="en">🔒 Parental oversight and approval that doesn't conflict with financial freedom.</p>
     </div>
 
   </div>
@@ -359,28 +123,34 @@
 <section id="jars">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">الجرار الثلاث</span>
-      <h2>كل مصروف يُقسَّم ثلاثة أقسام</h2>
-      <p class="lede">الأطفال يختارون كيف يُقسَّم مصروفهم — بالنسبة أو بمبالغ محددة — والجرار الثلاث تُكمل دائمًا ١٠٠٪. ميزانية يرونها ويلمسونها.</p>
+      <span class="eyebrow" data-lang="ar">الأقسام الرئيسية</span>
+      <span class="eyebrow" data-lang="en">The main jars</span>
+      <h2><span data-lang="ar">المصروف الشهري يتقسم ثلاثة أقسام</span><span data-lang="en">The monthly allowance splits into three parts</span></h2>
+      <p class="lede" data-lang="ar"> يضع الابن خطة مالية شهرية بسيطة يقسم فيها مصروفه لثلاثة أجزاء، إنفاق ، ادخار ، تبرع.</p>
+      <p class="lede" data-lang="en">Your child sets a simple monthly plan, dividing their allowance into three parts: spend, save, give.</p>
     </div>
     <div class="buckets">
       <div class="bucket spend reveal">
-        <div class="pct">٥٠٪</div>
-        <h3>أنفق</h3>
-        <p>مصروف يومي له خطة. ينشئ الطفل فئات إنفاق، وتأتيه تنبيهات قبل أن يتجاوز ميزانية أي فئة.</p>
+        <div class="pct"><span data-lang="ar">٥٠٪</span><span data-lang="en">50%</span></div>
+        <h3><span data-lang="ar">أنفق</span><span data-lang="en">Spend</span></h3>
+        <p data-lang="ar">  ينشئ الابن تحت قسم الانفاق اقسام فرعية لمصروفاته الأساسية خلال الشهر </p>
+        <p data-lang="en">Under the spending jar, your child creates sub-categories for their essential expenses through the month.</p>
       </div>
       <div class="bucket save reveal">
-        <div class="pct">٣٠٪</div>
-        <h3>ادّخر</h3>
-        <p>هدف بصورة وموعد. يبني الادخار المنتظم سلاسل إنجاز، ومحطات تحتفل بكل ٢٥% حتى خط النهاية.</p>
+        <div class="pct"><span data-lang="ar">٣٠٪</span><span data-lang="en">30%</span></div>
+        <h3><span data-lang="ar">ادّخر</span><span data-lang="en">Save</span></h3>
+        <p data-lang="ar"> يدخر الابن مبالغ شهرية يستخدمها في تحقيق أهدافه الموافق عليها من الأهل. </p>
+        <p data-lang="en">Your child saves monthly amounts to reach goals approved by their parents.</p>
       </div>
       <div class="bucket give reveal">
-        <div class="pct">٢٠٪</div>
-        <h3>تبرّع</h3>
-        <p>محفظة خيرية خاصة به. يختار قضية يؤمن بها، ويتبرع من جرته، ويرى أثر عطائه يكبر مع الوقت.</p>
+        <div class="pct"><span data-lang="ar">٢٠٪</span><span data-lang="en">20%</span></div>
+        <h3><span data-lang="ar">تبرّع</span><span data-lang="en">Give</span></h3>
+        <p data-lang="ar">يتبرع الابن بهذه المبالغ عبر المنصات الرسمية في البلد.</p>
+        <p data-lang="en">Your child donates these amounts through the country's official platforms.</p>
       </div>
     </div>
-    <p class="bucket-note reveal">تقسيم ٥٠ / ٣٠ / ٢٠ مجرد مثال — كل طفل يحدد مزيجه، والأهل يرون الخطة لحظة إنشائها.</p>
+    <p class="bucket-note reveal" data-lang="ar">تقسيم ٥٠ / ٣٠ / ٢٠ مجرد مثال — كل طفل يحدد تقسيمته ، والأهل يرون الخطة لحظة إنشائها.</p>
+    <p class="bucket-note reveal" data-lang="en">The 50 / 30 / 20 split is just an example — every child sets their own, and parents see the plan the moment it's created.</p>
   </div>
 </section>
 
@@ -388,78 +158,89 @@
 <section class="alt" id="how">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">كيف يعمل</span>
-      <h2>حلقة العادة، في ثلاث خطوات</h2>
-      <p class="lede">ثروة ليس درساً — إنه حلقة. تصرّف، اكسب، تأمّل. كل يوم يستخدمه طفلك تترسّخ العادة أعمق.</p>
+      <span class="eyebrow"></span>
+      <h2><span data-lang="ar"> أسلوبنا في ثلاث خطوات</span><span data-lang="en">Our approach in three steps</span></h2>
+      <p class="lede" data-lang="ar">ثروة مو درس تعليمي تقليدي — بل رحلة واقعية وعقلية تبنى . </p>
+      <p class="lede" data-lang="en">Tharwah isn't a traditional lesson — it's a real journey and a mindset being built.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
-        <h3>الأهل يهيّئون المسرح</h3>
-        <p>أنشئ حساب عائلتك، أضف كل طفل بكود بسيط، حدد المصروف، وكلّف بأول مهمة. يستغرق الأمر أقل من خمس دقائق.</p>
+        <h3><span data-lang="ar">الأهل يبدون الرحلة</span><span data-lang="en">Parents start the journey</span></h3>
+        <p data-lang="ar">أنشئ حساب عائلتك، ضيف أبناءك بسهولة، حدد المصروف، وكلّفهم بأول مهمة.</p>
+        <p data-lang="en">Create your family account, add your children easily, set the allowance, and assign their first task.</p>
       </div>
       <div class="step reveal">
-        <h3>الأطفال يتصرفون — ويكسبون</h3>
-        <p>مهام منجزة ← مال مكتسب ← جرار تمتلئ. كل شيء حقيقي: وافق على المهمة المكتملة وتصل المكافأة للجرة فوراً.</p>
+        <h3><span data-lang="ar">الأبناء يتصرفون — ويكسبون</span><span data-lang="en">Kids act — and earn</span></h3>
+        <p data-lang="ar">مهام منجزة ← جائزة مكتسبة ← أهداف تتحقق. كل شيء حقيقي: بمجرد موافقة الأهل المهمة المكتملة وتصل المكافأة للابن فوراً.</p>
+        <p data-lang="en">Tasks done → rewards earned → goals reached. It's all real: once parents approve the completed task, the reward reaches the child instantly.</p>
       </div>
       <div class="step reveal">
-        <h3>العادات تتشكّل بمرور الوقت</h3>
-        <p>سلاسل ادخار، سجل تبرعات، تاريخ مهام — يُريك التطبيق من يُصبح طفلك، قرارًا واحدًا في كل مرة.</p>
+        <h3><span data-lang="ar">العادات تتشكّل بمرور الوقت</span><span data-lang="en">Habits form over time</span></h3>
+        <p data-lang="ar">سلاسل ادخار، سجل تبرعات، تاريخ مهام — يُريك التطبيق تطور ابنك، قرار بعد قرار.</p>
+        <p data-lang="en">Saving streaks, a giving record, a task history — the app shows you your child's growth, decision after decision.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FEATURES ══ -->
-<section id="features">
+<!-- ══ AI ADVISOR ══ -->
+<section id="ai-advisor">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">ماذا في الداخل</span>
-      <h2>مبني على الفعل، لا على المعرفة</h2>
-      <p class="lede">كل ميزة في ثروة تكافئ سلوكًا — لا إجابة صحيحة. النتيجة هي الدرس.</p>
+      <span class="eyebrow" data-lang="ar">مستشار ثروة الذكي</span>
+      <span class="eyebrow" data-lang="en">Tharwah's smart advisor</span>
+      <h2><span data-lang="ar">مستشار مالي شخصي — ينصح ولا يفرض</span><span data-lang="en">A personal financial advisor — advises, never imposes</span></h2>
+      <p class="lede" data-lang="ar">مساعد ذكي يرافق ابنك وهو يضع خطته الشهرية، يقترح عليه ويشرح له، ويجاوب على أي سؤال مالي يدور في باله — والقرار يبقى قراره هو.</p>
+      <p class="lede" data-lang="en">A smart assistant that walks your child through their monthly plan, suggests and explains, and answers any money question on their mind — while the decision always stays theirs.</p>
     </div>
-    <div class="features-clean reveal">
-      <div class="feat-row">
-        <div class="feat-ico">🧹</div>
-        <div>
-          <h3>مهام تُدر مالاً</h3>
-          <p>الأهل يعيّنون مهامًا بمكافأة ومهلة. الطفل ينجزها، الأهل يوافقون، والمال ينتقل مباشرة إلى الجرة — دون اختبارات.</p>
-        </div>
+
+    <div class="ai-grid">
+
+      <!-- chat mock -->
+      <div class="ai-shot reveal">
+        <img src="assets/ai-chat.png" alt="لقطة من شاشة مستشار ثروة الذكي داخل التطبيق" width="488" height="1072">
       </div>
-      <div class="feat-row">
-        <div class="feat-ico">📈</div>
-        <div>
-          <h3>سلاسل الادخار</h3>
-          <p>الادخار المتواصل يبني سلاسل مرئية — أيام متتالية أضاف فيها الطفل لجرة الادخار. الصبر يصبح تقدمًا يُرى.</p>
+
+      <!-- copy -->
+      <div class="ai-copy reveal">
+        <div class="ai-points">
+          <div class="ai-point">
+            <div class="ai-point-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 15h3M8 18h6"/></svg></div>
+            <div>
+              <b data-lang="ar">يساعده في خطته الشهرية</b><b data-lang="en">Helps with the monthly plan</b>
+              <p data-lang="ar">يمشي مع ابنك خطوة بخطوة وهو يقسّم مصروفه، ويقترح تقسيمات تناسب أهدافه — بدون ما يجبره على رقم معيّن.</p>
+              <p data-lang="en">Walks your child step by step as they divide their allowance, suggesting splits that fit their goals — without forcing any number on them.</p>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 01-8 8H7l-4 3v-5.5A8 8 0 0113 4a8 8 0 018 8z"/><path d="M12 15v.01"/><path d="M12 12.5c0-1.5 2-1.6 2-3a2 2 0 10-4 0"/></svg></div>
+            <div>
+              <b data-lang="ar">يجاوب على أي سؤال</b><b data-lang="en">Answers any question</b>
+              <p data-lang="ar">"ليش أدّخر؟" ، "كم أحتاج شهر عشان أشتري دراجتي؟" — يسأل ابنك بحرية ويلقى إجابة بلغة يفهمها.</p>
+              <p data-lang="en">"Why should I save?", "How many months until I can buy my bike?" — your child asks freely and gets an answer in language they understand.</p>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5.2-5.2 2 2-5.2z"/></svg></div>
+            <div>
+              <b data-lang="ar">ينصح ولا يقرّر</b><b data-lang="en">Advises, doesn't decide</b>
+              <p data-lang="ar">يعرض الخيارات ونتائجها المتوقعة، ويترك الاختيار النهائي لابنك — لأن القرار هو أصل التعلّم.</p>
+              <p data-lang="en">It lays out the options and their likely outcomes, and leaves the final choice to your child — because the decision is where the learning happens.</p>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-3 8-7 9-4-1-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <div>
+              <b data-lang="ar">آمن ومناسب لعمره</b><b data-lang="en">Safe and age-appropriate</b>
+              <p data-lang="ar">حوار مصمّم للأطفال، بلغة بسيطة ومحتوى آمن، وضمن المساحة التي رسمها الأهل.</p>
+              <p data-lang="en">A conversation designed for children, in simple language with safe content, inside the space the parents set.</p>
+            </div>
+          </div>
         </div>
+        <p class="ai-note" data-lang="ar">✨ مستشار يوجّه ويشرح — والقرار يبقى بيد ابنك دائمًا.</p>
+        <p class="ai-note" data-lang="en">✨ An advisor that guides and explains — the decision always stays in your child's hands.</p>
       </div>
-      <div class="feat-row">
-        <div class="feat-ico">💝</div>
-        <div>
-          <h3>تبرّع وشاهد الأثر</h3>
-          <p>كل تبرع من جرة العطاء يُضاف إلى سجل الكرم الذي يمكن للطفل أن يرجع إليه. العطاء عادة، لا واجب مدرسي.</p>
-        </div>
-      </div>
-      <div class="feat-row">
-        <div class="feat-ico">✅</div>
-        <div>
-          <h3>الأهل يوافقون دائمًا</h3>
-          <p>كل إنجاز مهمة وسحب من الهدف وتقسيم جرة يحتاج موافقة أحد الوالدين. توجيه بلا مراقبة خانقة.</p>
-        </div>
-      </div>
-      <div class="feat-row">
-        <div class="feat-ico">🎯</div>
-        <div>
-          <h3>أهداف بمحطات حقيقية</h3>
-          <p>الطفل يضع هدف ادخار — دراجة، لعبة، رحلة — ويحتفل عند ٢٥% و٥٠% و٧٥%. صبر كبير في خطوات صغيرة محتفى بها.</p>
-        </div>
-      </div>
-      <div class="feat-row">
-        <div class="feat-ico">⭐</div>
-        <div>
-          <h3>نقاط على كل تصرف جيد</h3>
-          <p>إنجاز المهام، بلوغ السلاسل، التبرع للمجتمع — كل سلوك يكسب نقاطًا وأوسمة. حلقة العادة مجعولة مشجّعة.</p>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -468,30 +249,81 @@
 <section class="alt" id="families">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">للعائلات</span>
-      <h2>صُمم لطرفي طاولة المطبخ</h2>
+      <span class="eyebrow" data-lang="ar">ثروة</span>
+      <span class="eyebrow" data-lang="en">Tharwah</span>
+      <h2><span data-lang="ar">تطبيق بنافذتين أساسيتين</span><span data-lang="en">One app, two windows</span></h2>
     </div>
+
     <div class="duo">
+
+      <!-- Parents -->
       <div class="persona parents reveal">
-        <h3>للأهل</h3>
-        <p class="sub">توجيه بلا تخمين</p>
+        <h3><span data-lang="ar">للأهل</span><span data-lang="en">For parents</span></h3>
+        <p class="sub"><span data-lang="ar">توجيه ومتابعة</span><span data-lang="en">Guidance and oversight</span></p>
+
         <div class="persona-items">
-          <div class="persona-item"><div class="pi-dot"></div><span>حددوا مصروفًا أسبوعيًا أو شهريًا لكل طفل، وعدّلوه متى شئتم.</span></div>
-          <div class="persona-item"><div class="pi-dot"></div><span>وافقوا على المهام المنجزة وأهداف الادخار قبل تحرك أي مبلغ.</span></div>
-          <div class="persona-item"><div class="pi-dot"></div><span>استقبلوا إشعارًا عند كل محطة إنجاز — دون حاجة للمتابعة اليدوية.</span></div>
-          <div class="persona-item"><div class="pi-dot"></div><span>شاهدوا عادات أطفالكم المالية كلها في لوحة واحدة.</span></div>
+
+          <div class="persona-item">
+            <span data-lang="ar">حددوا مصروفًا شهريًا لكل ابن.</span>
+            <span data-lang="en">Set a monthly allowance for each child.</span>
+            <div class="pi-dot"></div>
+          </div>
+
+          <div class="persona-item">
+            <span data-lang="ar">وافقوا على المهام المنجزة وأهداف الادخار قبل وصول أي مكافأة.</span>
+            <span data-lang="en">Approve completed tasks and saving goals before any reward lands.</span>
+            <div class="pi-dot"></div>
+          </div>
+
+          <div class="persona-item">
+            <span data-lang="ar">استقبلوا إشعارًا عند كل إنجاز، دون حاجة للمتابعة اليدوية.</span>
+            <span data-lang="en">Get a notification with every achievement, no manual follow-up needed.</span>
+            <div class="pi-dot"></div>
+          </div>
+
+          <div class="persona-item">
+            <span data-lang="ar">تابعوا عادات أبنائكم المالية كاملةً في واجهة واحدة.</span>
+            <span data-lang="en">Follow your children's full financial habits in one view.</span>
+            <div class="pi-dot"></div>
+          </div>
+
         </div>
       </div>
+
+      <!-- Kids -->
       <div class="persona kids reveal">
-        <h3>للأطفال</h3>
-        <p class="sub">مالهم، وقراراتهم — بأمان</p>
+        <h3><span data-lang="ar">للأبناء</span><span data-lang="en">For kids</span></h3>
+        <p class="sub"><span data-lang="ar">مالهم، وقراراتهم — بأمان</span><span data-lang="en">Their money, their decisions — safely</span></p>
+
         <div class="persona-items">
-          <div class="persona-item"><div class="pi-dot"></div><span>يقسمون المصروف إلى جرار إنفاق وادخار وعطاء يتحكمون بها.</span></div>
-          <div class="persona-item"><div class="pi-dot"></div><span>يكسبون مالًا إضافيًا بإنجاز المهام التي يعيّنها الأهل.</span></div>
-          <div class="persona-item"><div class="pi-dot"></div><span>يشاهدون أهداف ادخارهم تمتلئ ويحتفلون بكل محطة.</span></div>
-          <div class="persona-item"><div class="pi-dot"></div><span>يتبرعون لقضايا حقيقية ويجمعون الأوسمة في الطريق.</span></div>
+
+          <div class="persona-item">
+            <span data-lang="ar">يقسمون المصروف إلى قسم إنفاق، وادخار، وتبرع يتحكمون فيها.</span>
+            <span data-lang="en">Split the allowance into spend, save, and give jars they control.</span>
+            <div class="pi-dot"></div>
+          </div>
+
+          <div class="persona-item">
+            <span data-lang="ar">يكسبون مالًا إضافيًا بإنجاز المهام التي يعيّنها الأهل.</span>
+            <span data-lang="en">Earn extra money by completing tasks their parents assign.</span>
+            <div class="pi-dot"></div>
+          </div>
+
+          <div class="persona-item">
+            <span data-lang="ar">يشاهدون أهداف ادخارهم تمتلئ ويحتفلون بكل مرحلة.</span>
+            <span data-lang="en">Watch their saving goals fill up and celebrate every milestone.</span>
+            <div class="pi-dot"></div>
+          </div>
+
+          <div class="persona-item">
+            <span data-lang="ar">يتبرعون عبر منصات رسمية ويجمعون الأوسمة في الطريق.</span>
+            <span data-lang="en">Donate through official platforms and collect badges along the way.</span>
+            <div class="pi-dot"></div>
+          </div>
+
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -499,17 +331,25 @@
 <!-- ══ ABOUT ══ -->
 <section id="about">
   <div class="wrap about-grid">
-    <div class="wordmark-card reveal" aria-hidden="true">
-      <div class="ar-mark">ثروة</div>
-      <div class="en-mark">tharwah</div>
-      <div class="tag">ثروة، بكل معانيها</div>
+    <div class="wordmark-card reveal">
+      <img class="wordmark-mascot" src="images/icon mascot.png" alt="تميمة ثروة" width="210" height="210">
+      <div class="mascot-caption">تطبيق ثروة</div>
+      <div class="ar-mark" aria-hidden="true">ثروة</div>
+      <div class="en-mark" aria-hidden="true">Tharwah</div>
+      <div class="tag" data-lang="ar">أبناؤنا هم الثروة</div>
+      <div class="tag" data-lang="en">Our children are the wealth</div>
     </div>
     <div class="about reveal">
-      <span class="eyebrow">لماذا ثروة؟</span>
-      <h2>العادات أبقى من الدروس</h2>
-      <p style="margin-top:16px;"><strong>الثروة التي نهتم بها ليست رصيدًا في الحساب</strong> — إنها العادات وحسن التقدير والكرم التي يحملها الطفل معه إلى حياته كلها.</p>
-      <p>نحن فريق صغير يبني التطبيق الذي تمنّينا لو نشأنا معه: مكان يتخذ فيه الأطفال قرارات حقيقية بمال حقيقي، في مساحة يرسمها الأهل ويشرفون عليها.</p>
-      <p>المدارس نادرًا ما تعلّم المال بالممارسة. ثروة يجعل طاولة مطبخ العائلة هي الملعب — مهمة واحدة، جرة واحدة، هدف ادخار واحد في كل مرة.</p>
+      <span class="eyebrow" data-lang="ar">لماذا ثروة؟</span>
+      <span class="eyebrow" data-lang="en">Why Tharwah?</span>
+      <h2><span data-lang="ar">العادات أبقى من الدروس</span><span data-lang="en">Habits outlast lessons</span></h2>
+      <p style="margin-top:16px;" data-lang="ar"><strong>الثروة الي نهتم فياها مو رصيد في الحساب</strong>
+ — بل الوعي المالي و الشخصية الي تتحمل المسؤولية.</p>
+      <p style="margin-top:16px;" data-lang="en"><strong>The wealth we care about isn't a balance in an account</strong> — it's financial awareness and a character that takes responsibility.</p>
+      <p data-lang="ar">نحن فريق شاب يبني التطبيق الي تمنّينا لو نشأنا معه: مكان يتخذ فيه الأبناء قرارات حقيقية بمال حقيقي، في مساحة يرسمها الأهل ويشرفون عليها.</p>
+      <p data-lang="en">We're a young team building the app we wish we'd grown up with: a place where kids make real decisions with real money, inside a space their parents shape and oversee.</p>
+      <p data-lang="ar">في المدارس نادرًا ما نتعلّم المال بالممارسة. ثروة يجعل الممارسة الواقعية مساحة آمنة لبناء وعي ومسؤولية مالية.</p>
+      <p data-lang="en">In schools we rarely learn money by doing. Tharwah turns real practice into a safe space for building financial awareness and responsibility.</p>
     </div>
   </div>
 </section>
@@ -518,13 +358,15 @@
 <section id="early-access">
   <div class="wrap">
     <div class="cta-band reveal">
-      <span class="eyebrow" style="color:rgba(255,255,255,.7);">انضم إلى قائمة الانتظار</span>
-      <h2>ربّوا أطفالًا واعين ماليًا معنا</h2>
-      <p>ثروة يستعد للإطلاق. أخبرونا باهتمامكم وسنعلمكم فور فتح الوصول المبكر لعائلتكم.</p>
-      <a class="btn-white" href="mailto:hello@tharwah-app.com?subject=طلب وصول مبكر - ثروة">طلب وصول مبكر ←</a>
+      <span class="eyebrow" style="color:rgba(255,255,255,.7);" data-lang="ar">انضم إلى قائمة الانتظار</span>
+      <span class="eyebrow" style="color:rgba(255,255,255,.7);" data-lang="en">Join the waitlist</span>
+      <h2><span data-lang="ar">نحو جيل مسؤول ماليًا</span><span data-lang="en">Toward a financially responsible generation</span></h2>
+      <p data-lang="ar">ثروة يستعد للإطلاق. أخبرونا باهتمامكم وسنعلمكم فور فتح الوصول المبكر لعائلتكم.</p>
+      <p data-lang="en">Tharwah is getting ready to launch. Tell us you're interested and we'll let you know the moment early access opens for your family.</p>
+      <a class="btn-white" href="mailto:tharwa.app@gmail.com?subject=طلب وصول مبكر - ثروة"><span data-lang="ar">طلب وصول مبكر ←</span><span data-lang="en">Request early access →</span></a>
       <img
         class="mascot-cta"
-        src="attached_assets/Untitled_-_21_يونيو_2026_في_22.33.16_(2)_1784218591127.png"
+        src="images\mascot"
         alt="تميمة ثروة واقفة"
         width="260" height="300"
       >
@@ -535,20 +377,27 @@
 <!-- ══ FOOTER ══ -->
 <footer>
   <div class="wrap foot">
-    <a class="logo" href="#top">ثروة <span class="en">tharwah</span></a>
+    <a class="logo" href="#top"><span data-lang="ar">ثروة</span><span data-lang="en">Tharwah</span> <span class="en" data-lang="ar">tharwah</span></a>
     <div class="foot-links">
-      <a href="#how">كيف يعمل</a>
-      <a href="#features">المميزات</a>
-      <a href="#about">من نحن</a>
-      <a href="#early-access">تواصل معنا</a>
+      <a href="#how"><span data-lang="ar"> أسلوبنا</span><span data-lang="en">Our approach</span></a>
+      <a href="#features"><span data-lang="ar">المميزات</span><span data-lang="en">Features</span></a>
+      <a href="#about"><span data-lang="ar">من نحن</span><span data-lang="en">About us</span></a>
+      <a href="#early-access"><span data-lang="ar">تواصل معنا</span><span data-lang="en">Contact us</span></a>
     </div>
-    <p class="foot-small">© ٢٠٢٦ ثروة · tharwah-app.com · نعلّم الأطفال قيمة المال، عادةً بعد عادة.</p>
+    <p class="foot-contact">
+      <span data-lang="ar">📧 للتواصل: </span><span data-lang="en">📧 Contact: </span>
+      <a href="mailto:tharwa.app@gmail.com">tharwah.app@gmail.com</a>
+    </p>
+    <p class="foot-small" data-lang="ar">© ٢٠٢٦ ثروة · tharwah-app.com · نعلّم الأطفال قيمة المال، عادةً بعد عادة.</p>
+    <p class="foot-small" data-lang="en">© 2026 Tharwah · tharwah-app.com · Teaching children the value of money, one habit at a time.</p>
   </div>
 </footer>
 
 <script>
 (function(){
   var root = document.documentElement;
+
+  /* ── THEME ── */
   var btn = document.getElementById('themeToggle');
   var saved = 'light';
   try { saved = localStorage.getItem('tharwah-theme') || 'light'; } catch(e){}
@@ -560,6 +409,24 @@
   apply(saved);
   if (btn) btn.addEventListener('click', function(){
     apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+
+  /* ── LANGUAGE ── */
+  var langBtn = document.getElementById('langToggle');
+  var savedLang = 'ar';
+  try { savedLang = localStorage.getItem('tharwah-lang') || 'ar'; } catch(e){}
+  function applyLang(l){
+    root.setAttribute('lang', l);
+    root.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+    document.title = l === 'ar'
+      ? '.ثروة — ابنِ عادات مالية، لا مجرد معرفة'
+      : 'Tharwah — Build money habits, not just knowledge';
+    if (langBtn) langBtn.textContent = l === 'ar' ? 'EN' : 'ع';
+    try { localStorage.setItem('tharwah-lang', l); } catch(e){}
+  }
+  applyLang(savedLang);
+  if (langBtn) langBtn.addEventListener('click', function(){
+    applyLang(root.getAttribute('lang') === 'ar' ? 'en' : 'ar');
   });
 })();
 
